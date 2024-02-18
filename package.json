@@ -1,0 +1,88 @@
+{
+  "author": "Stephen Isienyi <stephen.isienyi@webkrafting.com>",
+  "bugs": {
+    "url": "https://github.com/webKrafters/eagleeye/issues"
+  },
+  "contributors": [
+    "steveswork <stephen.isienyi@gmail.com> (https://github.com/steveswork)"
+  ],
+  "dependencies": {
+    "@webkrafters/react-observable-context": "^4.7.5"
+  },
+  "description": "Observable react context - Update-friendly context. Prevents automatic total component tree tear-down and re-rendering during context updates.",
+  "devDependencies": {
+    "@babel/cli": "^7.17.0",
+    "@babel/core": "^7.20.5",
+    "@babel/node": "^7.12.10",
+    "@babel/plugin-transform-runtime": "^7.17.0",
+    "@babel/preset-env": "^7.20.2",
+    "@types/jest-cli": "^24.3.0",
+    "babel-jest": "^26.6.3",
+    "babel-loader": "^8.2.5",
+    "eslint": "^8.29.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^26.0.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^5.0.0",
+    "jest-cli": "^26.6.3",
+    "typescript": "^4.8.2"
+  },
+  "files": [
+    "dist/index.js",
+    "dist/index.d.ts",
+    "index.js",
+    "package.json"
+  ],
+  "homepage": "https://eagleeyejs.org",
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ],
+    "testPathIgnorePatterns": [
+      "dist"
+    ],
+    "transform": {
+      "\\.[jt]sx?$": "babel-jest"
+    }
+  },
+  "keywords": [
+    "connect",
+    "context",
+    "eagle eye",
+    "hoc",
+    "hooks",
+    "observable",
+    "observable context",
+    "react",
+    "react context",
+    "react hooks",
+    "react observable conttext",
+    "react state",
+    "state",
+    "state management",
+    "state manager",
+    "useContext"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "eagleeye",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webKrafters/eagleeye.git"
+  },
+  "scripts": {
+    "build": "eslint --fix && rm -rf dist && babel src -d dist --ignore '**/*.test.js' && npx -p typescript tsc",
+    "lint": "eslint --fix",
+    "test": "eslint --fix && jest --coverage",
+    "test:core": "jest",
+    "test:watch": "eslint --fix && jest --watchAll"
+  },
+  "types": "dist/index.d.ts",
+  "version": "0.0.1"
+}
