@@ -8,7 +8,7 @@ Eagle Eye Context
 
 ### Install:
 
-npm i -S eagleeye
+npm i -S react-eagleeye
 
 ### For full documentation, please visit:
 
