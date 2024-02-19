@@ -1,6 +1,6 @@
 # Eagle Eye JS
 
-This is a developer-friendly non-scoped installation of the webKrafters' React Eagle Eye context.
+This is a developer-friendly non-scoped installation of the webKrafters' React Eagle Eye context. A more straight forward alternative to React Context API, Redux, Mobx etc.
 
 ### Name:
 

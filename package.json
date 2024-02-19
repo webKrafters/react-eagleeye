@@ -53,6 +53,7 @@
     "eagle eye",
     "hoc",
     "hooks",
+    "mobx",
     "observable",
     "observable context",
     "react",
@@ -60,6 +61,7 @@
     "react hooks",
     "react observable conttext",
     "react state",
+    "redux",
     "state",
     "state management",
     "state manager",
@@ -67,7 +69,7 @@
   ],
   "license": "MIT",
   "main": "index.js",
-  "name": "eagleeye",
+  "name": "react-eagleeye",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org"
@@ -84,5 +86,5 @@
     "test:watch": "eslint --fix && jest --watchAll"
   },
   "types": "dist/index.d.ts",
-  "version": "0.0.1"
+  "version": "1.0.0"
 }
