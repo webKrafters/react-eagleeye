@@ -8,7 +8,8 @@ Eagle Eye Context
 
 ### Install:
 
-npm i -S react-eagleeye
+npm i -S react-eagleeye\
+Alternate: npm i -S @webkrafters/react-observable-context
 
 ### For full documentation, please visit:
 
