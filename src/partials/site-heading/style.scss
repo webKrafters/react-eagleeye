@@ -1,0 +1,80 @@
+:root { --shbg: var( --skye ) }
+.dark { --shbg: var( --blackie ) }
+:root { --shborder: var( --skye ) }
+.dark { --shborder: var( --blackie ) }
+.site-heading {
+    background: var( --shbg );
+    border-bottom: 1px solid;
+    border-color: var( --shborder );
+    column-gap: 0.5rem;
+    > * { flex: 1 1 auto }
+    &, & > * {
+        align-items: center;
+        display: flex;
+    }
+    > :last-child {
+        flex-wrap: nowrap;
+        gap: 1rem;
+        justify-content: flex-end;
+        overflow-x: hidden;
+        padding-right: 0.5rem;
+        text-align: right;
+        > .site-tags { margin-right: 5rem }
+    }
+    .sider-toggle-btn, .branding, .logo-link, .logo {
+        height: var( --top-height )
+    }
+    .sider-toggle-btn {
+        background: var( --charcoal );
+        border: none;
+        border-right: 2px solid var( --blue );
+        color: var( --white );
+        display: block;
+        flex: 0 0 2rem;
+        > * { font-size: 1rem }
+    }
+    > .branding > .logo-link {
+        background-color: var( --shbg );
+        display: inline-block;
+        height: auto;
+        margin-top: 4rem;
+        padding: 1rem;
+        padding-top: 0;
+        position: relative;
+        > .logo {
+            height: auto;
+        }
+    }
+    .branding { width: 32rem }
+    .logo { width: 8rem }
+    .text {
+        align-items: center;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        width: 16rem;
+        white-space: nowrap;
+        @media ( max-width: 524px ) {
+            justify-content: flex-start;
+            padding-left: 1.5rem;
+        }
+        > :first-child {
+            font-size: 1.45rem;
+            font-weight: 800;
+            padding-right: 0.5rem;
+            > a { color: var( --react-blue ) }
+        }
+        > :last-child {
+            border-left: 0.25rem solid var( --react-blue );
+            font-weight: 300;
+            padding-left: 0.5rem;
+            > a {
+                color: var( --react-blue );
+                font-weight: 700;
+            }
+            @media ( max-width: 524px ) {
+                display: none;
+            }
+        }
+    }
+}

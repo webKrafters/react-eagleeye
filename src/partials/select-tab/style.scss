@@ -1,0 +1,42 @@
+.select-tab {
+    position: relative;
+    > .content {
+        margin-top: 0.5rem;
+    }
+    .ant-select {
+        color: var( --color );
+        &:not(.ant-select-disabled):hover .ant-select-selector,
+        &:not(.ant-select-customize-input) .ant-select-selector,
+        &-focused:not(.ant-select-disabled).ant-select:not(.ant-select-customize-input) .ant-select-selector {
+            border-width: 0 0 1px;
+        }
+        &:not(.ant-select-customize-input) .ant-select-selector {
+            background: var( --background-color );
+            border-color: var( --color );
+        }
+        &-focused:not(.ant-select-disabled).ant-select:not(.ant-select-customize-input) .ant-select-selector {
+            box-shadow: none;
+        }
+        .ant-select-arrow {
+            color: var( --color );
+        }
+    }
+    &__dropdown {
+        &.ant-select-dropdown {
+            background-color: var( --background-color );
+            color: var( --color );
+            .ant-select-item {
+                color: var( --color );
+                &-option {
+                    &-selected:not(.ant-select-item-option-disabled) {
+                        background-color: var( --background-color-mild );
+                        color: var( --color );
+                    }
+                    &-active:not(.ant-select-item-option-disabled) {
+                        background-color: var( --background-color );
+                    }
+                }
+            }
+        }
+    }
+}

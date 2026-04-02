@@ -1,0 +1,17 @@
+.index-page {
+    .installation {
+        > * {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        header {
+            font-variant: small-caps;
+            font-weight: 600;
+            text-decoration: underline;
+        }
+        strong {
+            margin-right: 0.5rem;
+            color: var( --blue );
+        }
+    }
+}
