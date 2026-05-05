@@ -11,7 +11,7 @@ import CodeBlock from '../../../../../partials/code-block';
 import Paragraph from '../../../../../partials/paragraph';
 
 const SAMPLE =
-`import { SET_TAG } from '@webkrafters/react-observable-context'; // SET_TAG = "@@SET"
+`import { SET_TAG } from '@webkrafters/react-eagleeye'; // SET_TAG = "@@SET"
 
 const state = {
     a: { b: [{ x: 7, y: 8, z: 9 }, { x: 17, y: 18, z: 19 }] },

@@ -9,7 +9,7 @@ import metadata from '../../../../../../gatsby-config/metadata';
 import CodeBlock from '../../../../../partials/code-block';
 
 const SAMPLE =
-`import { PUSH_TAG } from '@webkrafters/react-observable-context'; // PUSH_TAG = "@@PUSH"
+`import { PUSH_TAG } from '@webkrafters/react-eagleeye'; // PUSH_TAG = "@@PUSH"
 
 const state = {
     a: { b: [{ x: 7, y: 8, z: 9 }, { x: 17, y: 18, z: 19 }] },

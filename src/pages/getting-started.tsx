@@ -23,7 +23,7 @@ export default GettingStartedPage;
 export const Head : HeadFC = () => ( <title>Getting Started</title> );
 
 const creatorCode_7_0_0 =
-`import { createEagleEye } from '@webkrafters/react-observable-context';
+`import { createEagleEye } from '@webkrafters/react-eagleeye';
 const MyContext = createEagleEye({
     a: { b: { c: null, x: { y: { z: [ 2022 ] } } } }
 });

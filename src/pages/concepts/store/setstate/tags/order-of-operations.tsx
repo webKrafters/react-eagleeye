@@ -4,7 +4,7 @@ import Anchor from '../../../../../partials/anchor';
 import CodeBlock from '../../../../../partials/code-block';
 
 const SAMPLE =
-`import * as ctx from '@webkrafters/react-observable-context';
+`import * as ctx from '@webkrafters/react-eagleeye';
 
 const state = {
     a: { b: [{ x: 7, y: 8, z: 9 }, { x: 17, y: 18, z: 19 }] },
