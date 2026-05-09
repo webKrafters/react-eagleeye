@@ -43,6 +43,7 @@ const externalAccessCode =
         this._store = store;
         this._onEvent( this._store.getState() );
         this._unsub = store.subscribe(
+            'data-updated',
             () => this._onEvent( this._store.getState() )
         );
     }
