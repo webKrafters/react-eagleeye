@@ -19,7 +19,6 @@ const App = () => {
         d => console.log( d ),
         ObservableContext.store
     ));
-    useEffect(() => {})
     useEffect(() => () => monitor.cleanup(), []);
     return ( <Ui /> );
 }
