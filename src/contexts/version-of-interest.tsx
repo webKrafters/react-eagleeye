@@ -2,7 +2,7 @@ import React, { Children, createContext, useState } from 'react';
 
 import metadata from '../../gatsby-config/metadata';
 
-import { SemVer, Version } from '../partials/version-tabs/utils/calc-version-vmodel';
+import { SemVer, Version } from '../partials/tabs/version/utils/calc-version-vmodel';
 
 export interface Props {
     children?: React.ReactNode;

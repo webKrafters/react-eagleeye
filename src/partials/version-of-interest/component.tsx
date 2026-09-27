@@ -12,7 +12,7 @@ import CheckSquareFilled  from '@ant-design/icons/CheckSquareFilled';
 import CloseSquareFilled  from '@ant-design/icons/CloseSquareFilled';
 import LoadingOutlined  from '@ant-design/icons/LoadingOutlined';
 
-import { SemVer, VersionRange } from '../version-tabs/utils/calc-version-vmodel';
+import { SemVer, VersionRange } from '../tabs/version/utils/calc-version-vmodel';
 import { UpdateCtx, ValueCtx } from '../../contexts/version-of-interest';
 import { ValueCtx as BasePkgCtx } from '../../contexts/base-pkg';
 

@@ -1,5 +1,7 @@
 import pkgJson from '../package.json';
 
+import { Mode } from '../src/partials/tabs/mode';
+
 export const basePkgName = '@webkrafters/react-eagleeye';
 
 export const NO_SIDER_URI_PATTERN = /^$/; // /^(?:\/(?:quick-start\/?)?(?:\?.*)?)?$/;
@@ -21,6 +23,10 @@ export default {
         themeColor: '#23272f'
     },
     language: 'en',
+    modeOfInterest: {
+        defaultValue: Mode.CSR,
+        key: 'MOI-RE'
+    },
     siteUrl: 'https://react-eagleeye.js.org',
     title: 'React Eagle Eye JS',
     url: {
@@ -32,5 +38,5 @@ export default {
     versionOfInterest: {
         defaultValue: 'Latest',
         key: 'VEROI-RE'
-    },
+    }
 };

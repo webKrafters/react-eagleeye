@@ -16,14 +16,20 @@ import PageProvider, { UpdaterCtx as PageCtxUpdater } from './src/contexts/page'
 
 import DarkmodeProvider, { ValueCtx as DarkmodeValueCtx } from './src/contexts/dark-mode';
 
+import ModeOfInterestProvider from './src/contexts/mode-of-interest';
+
 import VersionOfInterestProvider from './src/contexts/version-of-interest';
 
 import Layout from './src/partials/layouts/index';
-import { Version } from './src/partials/version-tabs/utils/calc-version-vmodel';
-import { fromLocalStorage } from './src/partials/version-tabs/component';
+
+import { Version } from './src/partials/tabs/version/utils/calc-version-vmodel';
+
+import { fromLocalStorage } from './src/partials/tabs/version/component';
+
+import { Mode } from './src/partials/tabs/mode';
 
 export const onRouteUpdate : GatsbyBrowser[ "onRouteUpdate" ] = ({
-    location: { href }, prevLocation
+    location: { href }
 }) => {
     setTimeout( () => {
         sanitizeScroll( href );
@@ -71,7 +77,11 @@ export const wrapRootElement : GatsbyBrowser[ 'wrapRootElement' ] = ({ element, 
                 <VersionOfInterestProvider initValue={( 
                     fromLocalStorage( metadata.versionOfInterest.key ) ?? metadata.versionOfInterest.defaultValue
                 ) as Version }>
-                    { element }
+                    <ModeOfInterestProvider initValue={( 
+                        window.localStorage?.getItem( metadata.modeOfInterest.key ) ?? metadata.modeOfInterest.defaultValue
+                    ) as Mode }>
+                        { element }
+                    </ModeOfInterestProvider>
                 </VersionOfInterestProvider>
             </DarkmodeProvider>
         </PageProvider>
