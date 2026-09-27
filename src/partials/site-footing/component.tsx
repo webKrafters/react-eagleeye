@@ -11,6 +11,7 @@ import { ValueCtx } from '../../contexts/dark-mode';
 import DarkModeSettings from '../dark-mode-settings';
 
 import './style.scss';
+import ModeTabs from '../tabs/mode';
 
 const DarkModeLink : React.FC = () => {
     const isDarkMode = useContext( ValueCtx );
@@ -88,6 +89,7 @@ const Component : React.FC = props => {
                 </div>
                 <div>All rights reserved.</div>
             </div>
+            <ModeTabs />
         </footer> 
     );
 }

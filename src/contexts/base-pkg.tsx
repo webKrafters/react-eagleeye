@@ -5,7 +5,7 @@ import React, {
     useState
 } from 'react';
 
-import { SemVer } from '../partials/version-tabs/utils/calc-version-vmodel';
+import { SemVer } from '../partials/tabs/version/utils/calc-version-vmodel';
 
 import { basePkgName } from '../../gatsby-config/metadata';
 

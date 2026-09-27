@@ -10,6 +10,8 @@ import PageProvider from './src/contexts/page';
 
 import DarkmodeProvider from './src/contexts/dark-mode';
 
+import ModeOfInterestProvider from './src/contexts/mode-of-interest';
+
 import VersionOfInterestProvider from './src/contexts/version-of-interest';
 
 import Layout from './src/partials/layouts/index/index';
@@ -52,7 +54,9 @@ export const wrapRootElement : GatsbySSR[ 'wrapRootElement' ] = ({ element, path
         }}>
             <DarkmodeProvider>
                 <VersionOfInterestProvider>
-                    { element }
+                    <ModeOfInterestProvider>
+                        { element }
+                    </ModeOfInterestProvider>
                 </VersionOfInterestProvider>
             </DarkmodeProvider>
         </PageProvider>
