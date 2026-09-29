@@ -1,0 +1,11 @@
+.external-access-page {
+	.setup-code > .mode-tabs.universal {
+		> div:first-of-type {
+			top: 2.4rem !important;
+			z-index: 1;
+		}
+		> .content .ant-select {
+			width: 16.75rem !important;
+		}
+	}
+}
