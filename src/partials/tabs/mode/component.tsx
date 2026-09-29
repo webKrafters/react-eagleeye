@@ -87,19 +87,25 @@ const ModeTabs : FC<Props> = ({
 		setMode( modeOfInterest );
 	}, [ modeOfInterest ]);
 
-	const mProps = {
-		...props,
-		className: `mode-tabs${ prefixCls ? ' ' + prefixCls : '' }`,
-		style: { ...style, marginTop: '-1.5rem' }
-	};
-
 	return (
-		<div { ...mProps }>
+		<div
+			{ ...props }
+			className={ `mode-tabs ${ mode }${ prefixCls ? ' ' + prefixCls : '' }` }
+			style={{
+				background: 'transparent',
+    			marginTop: '-1.4rem',
+				paddingTop: '1.4rem',
+				position: 'relative',
+				...style
+			}}
+		>
 			<div style={{
 				alignItems: 'center',
 				display: 'flex',
 				justifyContent: 'flex-end',
-				marginBottom: '-3px'
+				position: 'absolute',
+				right: 0,
+				top: 0,
 			}}>
 				{ label }
 				<Button.Group { ...{ prefixCls, size: 'small' } }>
@@ -134,7 +140,7 @@ function Selector({ mode } : { mode : Mode }) {
 		return [ isCurrent, (
 			<span style={ isCurrent ? textStyle : {
 				...textStyle,
-				color: '#1899ff',
+				color: '#1890ff',
 				fontStyle: 'italic'
 			}}>
 				{ mode === Mode.CSR ? 'CSR' : 'SSR' }
@@ -144,7 +150,7 @@ function Selector({ mode } : { mode : Mode }) {
 	return !isCurrent ? (
 		<Button { ...{ onClick, style: {
 			...btnStyle,
-			borderColor: '#1899ff #1899ff #fff',
+			borderColor: '#1890ff #1890ff #fff',
 			justifyContent: 'center'
 		} } }>
 			{ modeLabel }

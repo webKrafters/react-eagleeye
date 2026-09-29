@@ -41,6 +41,7 @@ const Component : React.FC = () => (
 		<NavLink className="group-link" to="/api">API</NavLink>
 		<NavLinkIndent1 to="/api#connect">Connect HoC</NavLinkIndent1>
 		<NavLinkIndent1 to="/api#create-context">CreateContext Function</NavLinkIndent1>
+		<NavLinkIndent1 to="/api#provide">Provisioning{ ' (SSR Env.)' }</NavLinkIndent1>
 		<NavLinkIndent1 to="/api#usage-error">UsageError Exception</NavLinkIndent1>
 		<NavLinkIndent1 to="/api#usecontext">UseContext Hook</NavLinkIndent1>
 		<NavLink className="group-link" to="/concepts/client">Concepts</NavLink>

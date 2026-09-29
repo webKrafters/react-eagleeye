@@ -1,0 +1,11 @@
+.getting-started-page {
+	.container-code > .mode-tabs.universal {
+		> div:first-of-type {
+			top: 2.4rem !important;
+			z-index: 1;
+		}
+		> .content .ant-select {
+			width: 19.25rem !important;
+		}
+	}
+}

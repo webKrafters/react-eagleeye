@@ -7,11 +7,13 @@ import React from 'react';
 import Anchor from '../partials/anchor';
 import CodeBlock from '../partials/code-block';
 import Header from '../partials/segment-header';
+import ModeTabs from '../partials/tabs/mode';
 import Name from '../partials/name';
 import NotePad from '../partials/pad/note';
 import Paragraph from '../partials/paragraph';
+import SelectTab from '../partials/select-tab';
 
-import ModeTabs from '../partials/tabs/mode';
+import '../partials/contents/getting-started-page/style.scss';
 
 const GettingStartedPage : React.FC<PageProps> = ({ className }) => (
     <article className={ `getting-started-page ${ className }` }>
@@ -54,7 +56,10 @@ Container.displayName = 'Container';
 
 export default Container;`
 
-const containerCodeUniversal =
+//-----------------------------------------------
+//         using existing instance ID           |
+//-----------------------------------------------
+const containerCodeUniversal1 =
 `import React, { useEffect, useState } from 'react';
 import MyContext from './context';
 import Ui from './ui';
@@ -77,12 +82,16 @@ const Container = ({
 };
 Container.displayName = 'Container';
 
-export default Container
+export default Container;`
 
 //-----------------------------------------------
-//     alternate component implementation       |
+//              using local instance            |
 //-----------------------------------------------
-import { getDefaultState } from './context';
+const containerCodeUniversal2 =
+`import React, { useEffect, useState } from 'react';
+import MyContext, { getDefaultState } from './context';
+import Ui from './ui';
+
 const Container = ({ ageInMinutes: c = 0 }) => {
     const [ observable ] = useState(() => (
         createEagleEye( getDefaultState() )
@@ -97,7 +106,50 @@ const Container = ({ ageInMinutes: c = 0 }) => {
             <Ui />
         </MyContext.Provider>
     );
-};`
+};
+
+Container.displayName = 'Container';
+
+export default Container;`
+
+//-----------------------------------------------
+//          using annonymous instance           |
+//-----------------------------------------------
+const containerCodeUniversal3 =
+`import React, { useEffect, useRef } from 'react';
+import MyContext, { getDefaultState } from './context';
+import Ui from './ui';
+
+const Container = ({ ageInMinutes: c = 0 }) => {
+    const appStoreRef = useRef( null );
+    useEffect(() => {
+        MyContext.getObservableAt(
+            appStoreRef.current.targetId
+        ).store.setState({ c: ageInMinutes })
+    }, [ ageInMinutes ]);
+    return (
+        <MyContext.Provider ref={ appStoreRef.current }>
+            <Ui />
+        </MyContext.Provider>
+    );
+};
+
+Container.displayName = 'Container';
+
+export default Container;`
+
+const containerCodeUniversal = (
+    <SelectTab options={[{
+        label: ( <b>reusing known instance by its ID</b> ),
+        value: ( <CodeBlock>{ containerCodeUniversal1 }</CodeBlock> )
+    }, {
+        label: ( <b>using locally created instance</b> ),
+        value: ( <CodeBlock>{ containerCodeUniversal2 }</CodeBlock> )
+    }, {
+        label: ( <b>using annonymously generated instance</b> ),
+        value: ( <CodeBlock>{ containerCodeUniversal3 }</CodeBlock> )
+    }]} />
+);
 
 const connectorCode_7_0_0 =
 `import React, { useCallback, useEffect } from 'react';
@@ -265,7 +317,7 @@ function BodyCurrent() {
     return (
         <>
             <Paragraph className="snippet-intro" id="install">
-                <Name /> is an independent state manager, which once created, can be deployed at any location in all parts of the application. In a non-server environment, a Provider component may not be necessary. 
+                <Name /> is an independent state manager, which once created, can be deployed at any location in all parts of the application. The <Name /> context comes in two usage modes: the <b>CSR</b> and the <b>SSR</b> modes.
             </Paragraph>
             <Paragraph className="snippet-box">
                 <CodeBlock isInline>
@@ -283,11 +335,11 @@ function BodyCurrent() {
                     ssrDoc={ <CodeBlock>{ creatorCodeUniversal }</CodeBlock> }
                 />
             </Paragraph>
-            <Paragraph className="snippet-box">
+            <Paragraph className="snippet-box container-code">
                 <Header>container.js</Header>
                 <ModeTabs
                     csrDoc={ <CodeBlock>{ containerCode_7_0_0 }</CodeBlock> }
-                    ssrDoc={ <CodeBlock>{ containerCodeUniversal }</CodeBlock> }
+                    ssrDoc={ containerCodeUniversal }
                 />
             </Paragraph>
             <div className="snippet-intro" id="connect-usage">
