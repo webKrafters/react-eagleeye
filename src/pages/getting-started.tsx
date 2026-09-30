@@ -128,7 +128,7 @@ const Container = ({ ageInMinutes: c = 0 }) => {
         ).store.setState({ c: ageInMinutes })
     }, [ ageInMinutes ]);
     return (
-        <MyContext.Provider ref={ appStoreRef.current }>
+        <MyContext.Provider ref={ appStoreRef }>
             <Ui />
         </MyContext.Provider>
     );
