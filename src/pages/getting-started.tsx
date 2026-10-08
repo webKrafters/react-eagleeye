@@ -35,8 +35,8 @@ export const useMyStream = MyContext.useStream;
 export default MyContext;`
 
 const creatorCodeUniversal =
-`import { createEagleEyeUniversal } from '@webkrafters/react-eagleeye';
-const MyContext = createEagleEyeUniversal();
+`import { createEagleEyeUniverse } from '@webkrafters/react-eagleeye';
+const MyContext = createEagleEyeUniverse();
 export const useMyStream = MyContext.useStream;
 export const getDefaultState = () => ({
     a: { b: { c: null, x: { y: { z: [ 2022 ] } } } }

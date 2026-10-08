@@ -239,10 +239,10 @@ function BodyCurrent() {
             <h3>How do I access the store externally?</h3>
             <Paragraph>This is done by simply utilizing the context <code>store</code> property.</Paragraph>
             <Paragraph>
-                In a <b>universal SPA</b> { '(' }i.e. SSR mode{ ')' }, an existing <Name /> instance, if not immediately present, can be retrieved by passing its <code>targetId</code> to the <code>getObservableAt(...)</code> method of its <Name /> Universal instance. This <code>targetId</code> is assigned to a <Name /> context instance and returned as a result of either:
+                In a <b>universal SPA</b> { '(' }i.e. SSR mode{ ')' }, an existing <Name /> instance, if not immediately present, can be retrieved by passing its <code>targetId</code> to the <code>getObservableAt(...)</code> method of its <Name /> Universe instance. This <code>targetId</code> is assigned to a <Name /> context instance and returned as a result of either:
                 <ul>
-                    <li>calling the <Name /> Universal <code>provide(...)</code> instance method or</li>
-                    <li>rendering the <Name /> Universal instance <code>Provider</code> component.</li>
+                    <li>calling the <Name /> Universe <code>provide(...)</code> instance method or</li>
+                    <li>rendering the <Name /> Universe instance <code>Provider</code> component.</li>
                 </ul>
             </Paragraph>
             <Paragraph>For external access to the context, <strong>4</strong> store methods have been exposed. Namely:</Paragraph>

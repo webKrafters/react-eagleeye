@@ -19,7 +19,7 @@ const FeaturesHistoryPage : React.FC<PageProps> = ({ className }) => (
         <table>
             <thead><TRow><THCol>v1.1.0</THCol></TRow></thead>
             <tbody>
-                <TRow><TCol><b>1.</b></TCol><TCol>Integrating a dedicated universal rendering feature.</TCol></TRow>
+                <TRow><TCol><b>1.</b></TCol><TCol>Integrating a dedicated universal SPA rendering feature.</TCol></TRow>
                 <TRow><td><b>2.</b></td><td>Converted from isolated to environment aware system.</td></TRow>
                 {/* <TRow><td><b>2.</b></td><td> ........... </td></TRow> */}
             </tbody>

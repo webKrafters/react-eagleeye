@@ -22,8 +22,8 @@ function BodyCurrent(){
                 <h3>cache</h3>
                 <ListItem><div>is a property providing access to the underlying immutable cache managed by this <Name /> instance.</div></ListItem>
                 <NotePad>
-                    <InlineH4>On <Name /> Universal Instance.</InlineH4>
-                    <div>The <b><code>getObservableAt(...)</code></b> method of this instance may be used to obtain a <Name /> instance whose <code>cache</code> property is sought.</div>
+                    <InlineH4>On <Name /> Universe Instance.</InlineH4>
+                    <div>The <b><code>getObservableAt(...)</code></b> method of this instance may be used to obtain a <Name /> instance, provisioned by this instance, whose <code>cache</code> property is sought.</div>
                 </NotePad>
             </div>
             <div id="closed">
@@ -32,8 +32,8 @@ function BodyCurrent(){
                 <ListItem><div>Use the <Anchor to="/external-access#subscribing-to-context-disposal">"closing"</Anchor> event to be notified right before context deactivation.</div></ListItem>
                 <ListItem><div>Please see the <Anchor to="/api#dispose">dispose</Anchor> method below.</div></ListItem>
                 <NotePad>
-                    <InlineH4>On <Name /> Universal Instance.</InlineH4>
-                    <div>The <b><code>getObservableAt(...)</code></b> method of this instance may be used to obtain a <Name /> instance whose <code>closed</code> flag is under examinaton.</div>
+                    <InlineH4>On <Name /> Universe Instance.</InlineH4>
+                    <div>The <b><code>getObservableAt(...)</code></b> method of this instance may be used to obtain a <Name /> instance, provisioned by this instance, whose <code>closed</code> flag is under examinaton.</div>
                 </NotePad>
             </div>
             <div id="connect">
@@ -46,19 +46,19 @@ function BodyCurrent(){
                 <ListItem><div>A change in any of the referenced state slices automatically triggers an update of the related <code>store.data</code> property and a subsequent render of the client.</div></ListItem>
                 <ListItem><div>Any prop name conflicts between the injected <Anchor to="/concepts/store">store properties</Anchor> and the client's own props are resolved in favor of the client's own props. Such a scenario may be remedied by renaming the conflicting key within the <Anchor to="/concepts/selector-map">selector map</Anchor>.</div></ListItem>
                 <NotePad>
-                    <InlineH4><Name /> Universal Equivalent.</InlineH4>
-                    <div>The <b><code>stream(...)</code></b> function property is the <Name /> Universal instance <code>{ 'connect(...)' }</code> equivalent. This function returns an object whose <b><code>into(...)</code></b> method serves as the connector.</div>
+                    <InlineH4><Name /> Universe Equivalent.</InlineH4>
+                    <div>The <b><code>stream(...)</code></b> function property is the <Name /> Universe instance <code>{ 'connect(...)' }</code> equivalent. This function returns an object whose <b><code>into(...)</code></b> method serves as the connector.</div>
                 </NotePad>
             </div>
             <div id="create-context">
-                <h3>createEagleEye (SSR mode: createEagleEyeUniversal)</h3>
+                <h3>createEagleEye (SSR mode: createEagleEyeUniverse)</h3>
                 <ListItem><div>is a function accepting three optional parameters { '(' }to wit: the initial state object or an <Anchor to="https://auto-immutable.js.org/getting-started/">AutoImmutable</Anchor> instance bearing this initial state object, the <Anchor to="/concepts/prehooks">prehooks</Anchor> and the <Anchor to="/concepts/storage">storage</Anchor>{ ')' } and returning a <Name /> instance.</div></ListItem>
                 <ListItem><div>The returned instance is the store-bearing context.</div></ListItem>
                 <ListItem><div>The context's <Anchor to="/external-access">store</Anchor> is directly accessible through its <code>store</code> property.</div></ListItem>
                 <ListItem><div>A change stream <Anchor to="/concepts/store">store</Anchor> for this <code>context</code> can be obtained either by utilizing its <Anchor to="/api#connect">connect (or <code>stream</code> in SSR mode)</Anchor> function property or by expressing its <Anchor to="/api#usecontext">useStream</Anchor> property as a react component hook.</div></ListItem>
                 <NotePad>
-                    <InlineH4>On <Name /> Universal Instance.</InlineH4>
-                    <div>This instance produced by the <b><code>createEagleEyeUniversal(...)</code></b> serves to manage <Name /> instance availability and dispensaton in shared environments.</div>
+                    <InlineH4>On <Name /> Universe Instance.</InlineH4>
+                    <div>This instance produced by the <b><code>createEagleEyeUniverse(...)</code></b> serves to manage <Name /> instances' availability and dispensaton in shared environments.</div>
                 </NotePad>
             </div>
             <div id="dispose">
@@ -67,13 +67,13 @@ function BodyCurrent(){
                 <ListItem><div>Context deactivation is permanent.</div></ListItem>
                 <ListItem><div>The context's <Anchor to="/api#closed"><code>closed</code></Anchor> property confirms this status.</div></ListItem>
                 <NotePad>
-                    <InlineH4>On <Name /> Universal Instance.</InlineH4>
-                    <div>The <b><code>getObservableAt(...)</code></b> method of this instance may be used to obtain a <Name /> instance to dispose.</div>
+                    <InlineH4>On <Name /> Universe Instance.</InlineH4>
+                    <div>The <b><code>getObservableAt(...)</code></b> method of this instance may be used to obtain for disposal a <Name /> instance provisioneed by this instance.</div>
                 </NotePad>
             </div>
             <div id="provide">
                 <h3>Provisioning</h3>
-                <ListItem><div>is a feature of the <Name /> Universal class dispensed through the two following properties:</div></ListItem>
+                <ListItem><div>is a feature of the <Name /> Universe class dispensed through the two following properties:</div></ListItem>
                 <Paragraph style={{ marginLeft: '2.5rem' }}>
                     <h4>provide(...)</h4>
                     <ListItem><div>a method for making a <Name /> instance available to the application environment.</div></ListItem>
@@ -88,6 +88,11 @@ function BodyCurrent(){
                     <ListItem><div>when an existing instance is supplied, makes it available to the component tree; holds the identifier in the <code>targetId</code> property of its <code>ref</code> prop.</div></ListItem>
                     <ListItem><div>when no instance is supplied, makes a new one available to the component tree; holds the identifier in the <code>targetId</code> property of its <code>ref</code> prop.</div></ListItem>
                 </Paragraph>
+                <ListItem><div id="free">The <b><u><code>free(...)</code></u></b> method provides a means for the manual decommission of <Name /> instances provisioned by its <Name /> Universe instance.</div></ListItem>
+                <ListItem><div><b>NOTE: </b>This may not be necessary for the majority of cases. <Name /> Universe instances work cooperatively OOB with the system GC process to coordinate automatic cleanup activities.</div></ListItem>
+                <ListItem><div>The <code>free(...)</code> method only decommissions by default non-streaming <Name /> instances provisioned by its instance.</div></ListItem>
+                <ListItem><div>With its <b><code>force</code></b> flag argument set, it can preemptively decommission actively streaming instances provisioned by its instance as well.</div></ListItem>
+                <ListItem><div>Only set this flag when sure that parts of the system dependent on the stream provided by the decomissioned instance are protected.</div></ListItem>
             </div>
             <div id="usage-error">
                 <h3>UsageError</h3>
