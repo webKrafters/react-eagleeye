@@ -146,7 +146,7 @@ const App = () => {
     const appStoreAddress = useRef( null );
     const [ appStoreId, setAppStoreId ] = useState( null );
     useEffect(() => {
-        const { targetId } = appStoreAddress.current.=;
+        const { targetId } = appStoreAddress.current;
         const monitor = new StoreMonitor(
             d => console.log( d ),
             ObservableContext.getObservableAt(
@@ -157,7 +157,7 @@ const App = () => {
         return () => monitor.cleanup();
     }, []);
     return (
-        <TestContext.Provider ref={ appStoreAddress.current }>
+        <TestContext.Provider ref={ appStoreAddress }>
             <AppStoreIdContext.Provider value={ appStoreId }>
                 <Ui />
             </AppStoreIdContext.Provider>
